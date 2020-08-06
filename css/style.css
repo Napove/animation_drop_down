@@ -1,0 +1,72 @@
+nav{
+
+    background-color: #000000;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+}
+nav a{
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    display: flex;
+    align-items: baseline;
+}
+
+.caret{
+    
+    border-left: solid 7px transparent;
+    border-right: solid 7px transparent;
+    border-top: solid 7px #fff;
+    height: 0;
+    width: 0;
+    margin-left: 5px;
+    
+}
+
+.submenu{
+    background-color: blue;
+    position: absolute;
+    left: 0px;
+    top: calc(1em + 12px);
+    width: 100%;
+    height: auto;
+    max-height: 0px;
+    display: none;
+}
+
+.submenu a:hover{
+    color: darkblue;
+    background-color: rgb(247, 238, 238);
+}
+
+.submenu a{
+    padding: 10px;
+}
+
+#submenu1:hover,
+#submenu2:hover{
+    display: block;
+    max-height: 600px;
+}
+nav a.link1:hover + #submenu1,
+nav a.link2:hover + #submenu2{
+    display: block;
+    animation-name: navegador;
+    animation-duration: 1s;
+    max-height: 600px;
+}
+
+@keyframes navegador{
+
+    0%{
+       max-height: 0px ; 
+    }
+
+     100%{
+        max-height: 600px;
+     }
+}
+
+
+
